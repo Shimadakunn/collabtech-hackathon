@@ -1,66 +1,45 @@
-## Foundry
+# Smart Contracts
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
-
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+## Entry Point
+Address
+```
+0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789
 ```
 
-### Test
-
-```shell
-$ forge test
+## Factory
+Address
+```
+0xaCea7eD933a39B18E30C9F899a97787669f55752
 ```
 
-### Format
+Salt: 88
 
-```shell
-$ forge fmt
+Chains
+- Arbitrum Sepolia
+- Optimism Sepolia
+
+## Paymaster
+Address
+```
+0x10Fa4C0fe7a48B7d5372Cb84651AA90E5BEB8E88
 ```
 
-### Gas Snapshots
+Salt: 88
 
-```shell
-$ forge snapshot
+Chains
+- Sepolia
+- Arbitrum Sepolia
+- Optimism Sepolia
+
+## P256 Verifier
+Address
+```
+0x3AB1BDed845DE299EcC4A8E5aB6AF2AB10860F04
 ```
 
-### Anvil
+Salt: 88
 
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Chains
+- Sepolia
+- Arbitrum Sepolia
+- Optimism Sepolia

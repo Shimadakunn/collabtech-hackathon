@@ -183,7 +183,7 @@ export default function WCSendTransactionModal({
             <AlertDialogCancel onClick={() => onReject()}>
               Cancel
             </AlertDialogCancel>
-            <Button onClick={() => submitTx()}>Send Tx</Button>
+            <Button onClick={() => submitTx()}>Sign Tx</Button>
           </AlertDialogFooter>
         </>
       </AlertDialogContent>

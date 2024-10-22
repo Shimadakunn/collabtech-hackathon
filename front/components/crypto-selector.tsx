@@ -46,19 +46,11 @@ export const CryptoSelector = () => {
                   alt={"chainsLogo"}
                   className="absolute bottom-0 left-0 transform -translate-x-1/4 translate-y-1/4"
                 />
-                <Image
-                  src={`/chains-icons/Optimism Sepolia.svg`}
-                  width={15}
-                  height={15}
-                  alt={"chainsLogo"}
-                  className="absolute bottom-0 right-0 transform translate-x-1/4 translate-y-1/4"
-                />
               </div>
               <h1>ETH</h1>
               <div className="pl-2">
                 {formatBalance(
-                  parseFloat(tokens["eth-arbitrumSepolia"].balance!) +
-                    parseFloat(tokens["eth-optimismSepolia"].balance!),
+                  parseFloat(tokens["eth-arbitrumSepolia"].balance!),
                   4
                 )}
               </div>

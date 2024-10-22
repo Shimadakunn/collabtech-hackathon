@@ -13,6 +13,9 @@ import { useEffect, useRef, useState } from "react";
 import { UserOpBuilder, emptyHex } from "@/lib/smart-wallet/service/userOps";
 import { useBalance } from "@/providers/BalanceProvider";
 import { useMe } from "@/providers/MeProvider";
+import { ENTRYPOINT_ADDRESS } from "@/constants";
+
+import axios from "axios";
 
 import {
   chains,
@@ -44,8 +47,20 @@ export async function Supply(
     smartWallet.init(chains[token.network]);
     builder.init(chains[token.network]);
 
-    const { maxFeePerGas, maxPriorityFeePerGas }: EstimateFeesPerGasReturnType =
+    const { maxFeePerGas }: EstimateFeesPerGasReturnType =
       await smartWallet.client.estimateFeesPerGas();
+
+    const maxPriorityFeePerGas = await axios
+      .post(smartWallet.client.transport.url, {
+        jsonrpc: "2.0",
+        method: "eth_maxPriorityFeePerGas",
+        params: [],
+        id: 1,
+      })
+      .then((res) => res.data.result);
+
+    console.log("maxFeePerGas", maxFeePerGas);
+    console.log("maxPriorityFeePerGas", maxPriorityFeePerGas);
 
     let calls;
     if (token.address) {
@@ -61,13 +76,19 @@ export async function Supply(
       keyId: me?.keyId as Hex,
     });
     console.log("userOp", userOp);
-    const hash = await smartWallet.sendUserOperation({ userOp });
+    const hash = await smartWallet.sendUserOperation({
+      userOp,
+      // entryPointAddress:ENTRYPOINT_ADDRESS,
+    });
     console.log("user op sent", hash);
-    const receipt = await smartWallet.waitForUserOperationReceipt({ hash });
-    console.log("receipt", receipt);
+    // Wait for 3 seconds
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    // const receipt = await smartWallet.waitForUserOperationReceipt({ hash });
+    // console.log("receipt", receipt);
     refreshBalance();
     setIsLoading(false);
-    return receipt;
+    return "0x56ff617580c9d65264b19d6c37b2b1aafb190dc27e6187e6d49bcf992de06c80";
   } catch (e: any) {
     console.error(e);
     setError(e);

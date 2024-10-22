@@ -13,6 +13,7 @@ import {
   Transport,
   createPublicClient,
   http,
+  Hex,
 } from "viem";
 import { arbitrumSepolia } from "viem/chains";
 import { transport } from "../config";
@@ -80,6 +81,7 @@ class SmartWallet {
 
   public async sendUserOperation(args: {
     userOp: UserOperationAsHex;
+    // entryPointAddress: Hex;
   }): Promise<`0x${string}`> {
     this._isInit();
     console.log("sending userOp", args);
@@ -120,6 +122,13 @@ class SmartWallet {
       ...args,
     });
   }
+
+  // public async maxPriorityFeePerGas(args: any): Promise<bigint> {
+  //   this._isInit();
+  //   return await this._client.maxPriorityFeePerGas({
+  //     ...args,
+  //   });
+  // }
 
   private _isInit() {
     if (this._isInitiated) {

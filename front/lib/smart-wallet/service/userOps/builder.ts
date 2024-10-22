@@ -161,6 +161,8 @@ export class UserOpBuilder {
       BigInt(initCodeGas) +
       BigInt(2_000_000);
 
+    userOp.maxPriorityFeePerGas = BigInt(37500000);
+
     console.log("builder chain", this.chain);
 
     const chain = Object.entries(chains).find(

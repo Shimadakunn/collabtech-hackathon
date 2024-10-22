@@ -5,7 +5,7 @@
 </div>
 
 https://github.com/user-attachments/assets/95631734-f2fd-4114-80ee-7390c5b91814
-# SOUND ON ON THE DEMO VIDEO
+# 🔊 SOUND ON FOR THE DEMO VIDEO 🔊
 ---
 # Smart Contracts
 ## Supported Chains

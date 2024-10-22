@@ -27,19 +27,6 @@ export const tokens: {
     address: "0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d",
     aave: "0x460b97BD498E1157530AEb3086301d5225b91216",
   },
-  // "eth-optimismSepolia": {
-  //   name: "Ethereum",
-  //   coin: "ETH",
-  //   network: "optimismSepolia",
-  //   aave: "0x23e4E76D01B2002BE436CE8d6044b0aA2f68B68a",
-  // },
-  // "usdc-optimismSepolia": {
-  //   name: "USD Coin",
-  //   coin: "USDC",
-  //   network: "optimismSepolia",
-  //   address: "0x5fd84259d66Cd46123540766Be93DFE6D43130D7",
-  //   aave: "0xa818F1B57c201E092C4A2017A91815034326Efd1",
-  // },
 };
 
 export const ERC20_ABI = [

@@ -18,12 +18,6 @@ export const contracts: {
     ipoolAddress: "0xBfC91D59fdAA134A4ED45f7B584cAf96D7792Eff",
     tokenArray: ["eth-arbitrumSepolia", "usdc-arbitrumSepolia"],
   },
-  "aave-optimismSepolia": {
-    name: "Aave",
-    address: "0x589750BA8aF186cE5B55391B0b7148cAD43a1619",
-    ipoolAddress: "0xb50201558B00496A145fE76f7424749556E326D8",
-    tokenArray: ["eth-optimismSepolia", "usdc-optimismSepolia"],
-  },
 };
 
 export const AAVE_ABI = [
